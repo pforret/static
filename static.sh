@@ -301,9 +301,10 @@ function Tool:throughput() {
   local operations=${2:-1}
   local name=${3:-operation}
 
-  local time_finished=$(Tool:time)
+  local time_finished
+  time_finished=$(Tool:time)
   duration=$(Tool:calc "$time_finished - $time_started")
-  seconds=$(Tool:round $duration)
+  seconds=$(Tool:round "$duration")
   if [[ "$operations" -gt 1 ]] ; then
     if [[ $operations -gt $seconds ]] ; then
       ops=$(Tool:calc "$operations / $duration" )
