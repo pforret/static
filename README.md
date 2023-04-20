@@ -13,26 +13,34 @@ quick install/preview/deploy for static site generators (Jekyll, Mkdocs)
 ## 🔥 Usage
 
 ```
-Program: static 0.0.1 by peter@forret.com
-Updated: 2023-04-20
-Description: quick install/preview/deploy for static site generators (Jekyll, Mkdocs)
-Usage: normal.sh [-h] [-q] [-v] [-f] [-l <log_dir>] [-t <tmp_dir>] <action> <input?>
+Program : static  by peter@forret.com
+Version : v0.0.1 (2023-04-20 13:10)
+Purpose : quick install/preview/deploy for static site generators (Jekyll, Mkdocs)
+Usage   : static [-h] [-q] [-v] [-f] [-l <log_dir>] [-t <tmp_dir>] <action>
 Flags, options and parameters:
     -h|--help        : [flag] show usage [default: off]
     -q|--quiet       : [flag] no output [default: off]
-    -v|--verbose     : [flag] output more [default: off]
+    -v|--verbose     : [flag] also show debug messages [default: off]
     -f|--force       : [flag] do not ask for confirmation (always yes) [default: off]
-    -l|--log_dir <?> : [option] folder for log files   [default: /Users/pforret/log/normal]
-    -t|--tmp_dir <?> : [option] folder for temp files  [default: .tmp]
-    <action>         : [parameter] action to perform: analyze/convert
-    <input>          : [parameter] input file/text (optional)
+    -l|--log_dir <?> : [option] folder for log files   [default: /home/pforret/log/static]
+    -t|--tmp_dir <?> : [option] folder for temp files  [default: /tmp/static]
+    <action>         : [choice] action to perform  [options: action1,action2,check,env,update]
 ```
 
 ## ⚡️ Examples
 
 ```bash
-> static .
-# start PhpStorm with current folder as project
+# initialize a project (e.g. after a fresh git clone)
+static init
+
+# preview a SSG project (start serve & open browser)
+static serve
+
+# build a SSG projet (build site)
+static build
+
+# deploy a SSG project (build/git commit/git push)
+static deploy
 ```
 
 ## 🚀 Installation
