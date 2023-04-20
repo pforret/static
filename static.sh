@@ -145,7 +145,7 @@ quiet=0
 
 ### stdIO:print/stderr output
 function IO:initialize() {
-  script_started_at=$(Tool:time)
+  # script_started_at=$(Tool:time)
   [[ "${BASH_SOURCE[0]:-}" != "${0}" ]] && sourced=1 || sourced=0
   [[ -t 1 ]] && piped=0 || piped=1 # detect if output is piped
   if [[ $piped -eq 0 ]]; then
